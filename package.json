@@ -1,0 +1,68 @@
+{
+  "name": "boip",
+  "jest": {
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/testProjectName/"
+    ],
+    "testMatch": [
+      "**/__tests__/cli.test.js"
+    ]
+  },
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=7.10.1"
+  },
+  "bin": {
+    "boip": "./bin/main.js"
+  },
+  "private": true,
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:watch": "npm run jest -- --watch",
+    "cover": "npm test -- --coverage",
+    "make:esdoc": "esdoc -c ./esdoc.json "
+  },
+  "keywords": [
+    "boilerplate",
+    "template",
+    "project",
+    "generator",
+    "temject",
+    "prompts"
+  ],
+  "files": [
+    "src",
+    "bin",
+    "!**/__tests__/**"
+  ],
+  "dependencies": {
+    "cac": "^6.3.9",
+    "conf": "^2.1.0",
+    "download-git-repo": "^1.1.0",
+    "globby": "^8.0.1",
+    "ora": "^3.2.0",
+    "prompts": "^1.2.1",
+    "temject.copy": "^0.1.0",
+    "xza": "^2.0.1"
+  },
+  "devDependencies": {
+    "del": "^4.0.0",
+    "esdoc": "^1.1.0",
+    "esdoc-node": "^1.0.3",
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.0",
+    "eslint-plugin-jsdoc": "^3.9.1",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.5.0",
+    "prettier": "^1.15.3"
+  },
+  "main": "src/boip.js",
+  "license": "MIT",
+  "author": "mick-whats"
+}

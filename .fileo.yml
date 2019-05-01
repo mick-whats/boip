@@ -1,0 +1,25 @@
+lang: en
+templates:
+  Function:
+    path: ./src/{{dir}}/{{name}}.js
+    contents: [
+        /**,
+        " * {{name}}",
+        " *",
+        " * @return {*}",
+        " */",
+        "module.exports = function {{name}} ()
+        {",
+        "",
+        "}",
+      ]
+  jest:
+    path: ./src/{{dir}}/__tests__/{{name}}.test.js
+    contents:
+      - "const {{name}} = require('../{{name}}')"
+      - ""
+      - "test('{{name}} test', () => {"
+      - "  const res = {{name}}()"
+      - "  console.log('{{name}}:', res)"
+      - "  expect(1).toBe(1)"
+      - "})"
