@@ -17,7 +17,6 @@
   "bin": {
     "boip": "./bin/main.js"
   },
-  "private": true,
   "scripts": {
     "test": "jest --runInBand",
     "test:watch": "npm run jest -- --watch",
