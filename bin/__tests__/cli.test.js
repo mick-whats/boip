@@ -1,6 +1,7 @@
 /* eslint-disable jsdoc/require-example */
 const del = require('del')
 const fs = require('fs')
+const path = require('path')
 const globby = require('globby')
 const prompt = require('../prompt')
 const Con = require('../../src/helpers/con')
@@ -112,7 +113,9 @@ beforeEach(async () => {
     return Promise.resolve(obj[key])
   })
   prompt.confirm.mockResolvedValue(true)
-  await del(['testProjectName/**'], { dot: true, onlyFiles: false })
+  console.log('cwd: ', process.cwd())
+  const _path = path.join(process.cwd(), 'testProjectName')
+  await del([`${_path}/**`], { dot: true, onlyFiles: false })
 })
 
 test('injections', () => {
