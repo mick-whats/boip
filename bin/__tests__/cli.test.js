@@ -113,8 +113,8 @@ beforeEach(async () => {
     return Promise.resolve(obj[key])
   })
   prompt.confirm.mockResolvedValue(true)
-  console.log('cwd: ', process.cwd())
-  const _path = path.join(process.cwd(), 'testProjectName')
+  const _path = path.join(process.cwd(), 'testProjectName', '**')
+  console.log('_path: ', _path)
   await del([`${_path}/**`], { dot: true, onlyFiles: false })
 })
 
