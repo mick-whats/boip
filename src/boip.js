@@ -166,11 +166,17 @@ class Boip {
     }
     for (let o of this.paths) {
       const spinner = ora(`create ${o.newFilePath}`).start()
+
       const plain = this.temjectIgnore
         ? this.temjectIgnore.some(item => {
-          return minimatch(o.templatePath, item)
-        })
-        : !!o.plain
+          return minimatch(o.templatePath, item, { dot: true })
+        }) || !!o.plain
+        : false
+      // const plain = this.temjectIgnore
+      //   ? this.temjectIgnore.some(item => {
+      //     return minimatch(o.templatePath, item, {dot: true})
+      //   })
+      //   : !!o.plain
       try {
         await temjectCopy.temjectCopy(
           o.templatePath,
