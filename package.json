@@ -10,8 +10,7 @@
   "scripts": {
     "test": "jest --runInBand",
     "test:watch": "npm run jest -- --watch",
-    "cover": "npm test -- --coverage",
-    "make:esdoc": "esdoc -c ./esdoc.json "
+    "cover": "npm test -- --coverage"
   },
   "keywords": [
     "boilerplate",
