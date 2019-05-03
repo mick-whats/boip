@@ -114,10 +114,14 @@ beforeEach(async () => {
   })
   prompt.confirm.mockResolvedValue(true)
   const _path = path.join(process.cwd(), 'testProjectName', '**')
-  console.log('_path: ', _path)
+  // console.log('_path: ', _path)
   await del([`${_path}/**`], { dot: true, onlyFiles: false })
 })
-
+afterEach(async () => {
+  const _path = path.join(process.cwd(), 'testProjectName', '**')
+  // console.log('_path: ', _path)
+  await del([`${_path}/**`], { dot: true, onlyFiles: false })
+})
 test('injections', () => {
   const args = cli.parse(['node', 'boip', 'injections', 'key1', 'val1', '-d'], {
     run: false
@@ -127,8 +131,8 @@ test('injections', () => {
     options: { '--': [], d: true }
   })
 })
-describe('real execute', () => {
-  test('create projectName', async () => {
+describe.only('real execute', () => {
+  test.only('create projectName', async () => {
     const args = ['node', 'boip', 'create', projectName, '-r', repoName]
     const opts = cli.parse(args, { run: false })
     expect(opts).toEqual({
