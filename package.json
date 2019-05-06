@@ -51,6 +51,12 @@
     "prettier": "^1.15.3"
   },
   "main": "src/boip.js",
+  "homepage": "https://github.com/mick-whats/boip",
+  "bugs": "https://github.com/mick-whats/boip/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mick-whats/boip.git"
+  },
   "license": "MIT",
   "author": "mick-whats"
 }
