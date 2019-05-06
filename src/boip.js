@@ -75,7 +75,6 @@ class Boip {
     if (!templatePaths.length) {
       throw new Error(errors.fileNotExist)
     }
-    // TODO: 拡張子なしnoject対応test
     this.temjectIgnore = this.opts.temjectIgnore
       ? ['**/*.noject.*', '**/*.noject'].concat(
         _.flatten([this.opts.temjectIgnore]).map(str => {
@@ -166,11 +165,12 @@ class Boip {
     }
     for (let o of this.paths) {
       const spinner = ora(`create ${o.newFilePath}`).start()
+
       const plain = this.temjectIgnore
         ? this.temjectIgnore.some(item => {
-          return minimatch(o.templatePath, item)
-        })
-        : !!o.plain
+          return minimatch(o.templatePath, item, { dot: true })
+        }) || !!o.plain
+        : false
       try {
         await temjectCopy.temjectCopy(
           o.templatePath,
