@@ -2,7 +2,7 @@ const os = require('os')
 const prompts = require('prompts')
 const pickupRepos = require('../src/helpers/pickupRepos')
 const Boip = require('../src/boip')
-const { red, green, cyan, bold } = require('kleur')
+const { cyan, bold } = require('kleur')
 
 module.exports.selectRepository = function () {
   return new Promise(async (resolve, reject) => {

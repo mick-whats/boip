@@ -1,15 +1,5 @@
 {
   "name": "boip",
-  "jest": {
-    "verbose": true,
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/testProjectName/"
-    ],
-    "testMatch": [
-      "**/__tests__/cli.test.js"
-    ]
-  },
   "version": "0.1.0",
   "engines": {
     "node": ">=7.10.1"
@@ -18,10 +8,9 @@
     "boip": "./bin/main.js"
   },
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --config jest.json",
     "test:watch": "npm run jest -- --watch",
-    "cover": "npm test -- --coverage",
-    "make:esdoc": "esdoc -c ./esdoc.json "
+    "cover": "npm test -- --coverage"
   },
   "keywords": [
     "boilerplate",
