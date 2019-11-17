@@ -51,7 +51,7 @@
     "prettier": "^1.15.3"
   },
   "main": "src/boip.js",
-  "homepage": "https://github.com/mick-whats/boip",
+  "homepage": "https://boip-doc.netlify.com/",
   "bugs": "https://github.com/mick-whats/boip/issues",
   "repository": {
     "type": "git",
